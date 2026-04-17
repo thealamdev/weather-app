@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --container-center: true;
+  --container-center: "true";
   --container-padding: 1rem;
 }
 
