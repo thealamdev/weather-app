@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-type WeatherData = {
+export type WeatherData = {
     temp: number;
     maxTemp: number;
     minTemp: number;
@@ -70,6 +70,7 @@ const useWeather = () => {
         }
     }, [])
 
+    console.log(weather)
     return { weather, isLoading };
 }
 

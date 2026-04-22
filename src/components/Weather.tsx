@@ -6,13 +6,17 @@ import tempMinIcon from '../assets/icons/temp-min.svg';
 import humidityIcon from '../assets/icons/humidity.svg';
 import cloudyIcon from '../assets/icons/cloud.svg';
 import windIcon from '../assets/icons/wind.svg';
-import { useWeather } from '../hooks';
+import { useContext } from 'react';
+import { WeatherContext } from '../context';
 
 export default function Weather() {
 
-    const {weather, isLoading} = useWeather();
+    const { weather, isLoading } = useContext(WeatherContext);
 
-    console.log(weather, isLoading)
+    if (isLoading.state) {
+        return <div>{isLoading.message}</div>
+    }
+
     return (
         <main>
             <section className="">
