@@ -1,11 +1,14 @@
+import logo from '../assets/logo.svg';
+import searchIcon from '../assets/search.svg';
+import heart from '../assets/heart.svg';
 
 
 export default function Header() {
     return (
-        <header className="fixed w-full top-0 z-50 bg-gradient-to-b from-black/60 to-black/0 pb-10">
+        <header className="container mx-auto fixed w-full top-0 z-50 bg-gradient-to-b from-black/60 to-black/0 pb-10">
             <nav className="container flex items-center justify-between py-6">
                 <a href="./index.html">
-                    <img className="h-9" src="./assets/logo.svg" alt="Weather App" />
+                    <img className="h-9" src={logo} alt="Weather App" />
                 </a>
 
                 <div className="flex items-center gap-4 relative">
@@ -14,12 +17,12 @@ export default function Header() {
                             <input className="bg-transparent  placeholder:text-white text-white w-full text-xs md:text-base outline-none border-none"
                                 type="search" placeholder="Search Location" required />
                             <button type="submit">
-                                <img src="./assets/search.svg" />
+                                <img src={searchIcon} />
                             </button>
                         </div>
                     </form>
                     <div className="p-2 hover:bg-black/30 cursor-pointer flex gap-2 items-center rounded-md transition-all">
-                        <img src="./assets/heart.svg" alt="" />
+                        <img src={heart} alt="heart" />
                         <span>Favourite Locations</span>
                     </div>
 

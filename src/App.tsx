@@ -1,30 +1,12 @@
-import { useEffect, useState } from 'react';
 import './App.css'
 import Header from './components/Header';
-import { webApi } from './api/service';
+import Weather from './components/Weather';
 
 function App() {
-  const [events, setEvents] = useState();
-  useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const response = await webApi.get('/programs');
-        if (response && response.data) {
-          setEvents(response?.data?.payload)
-        }
-      } catch (err) {
-        return err;
-      }
-
-    }
-    fetchEvents();
-  }, [])
   return (
-    <div className='container mx-auto'>
+    <div className="bg-body font-[Roboto] text-light bg-[url('./assets/body-bg.png')] bg-no-repeat bg-cover h-screen grid place-items-center">
       <Header />
-      <pre>
-        {JSON.stringify(events, null, 2)}
-      </pre>
+      <Weather />
     </div>
   )
 }
